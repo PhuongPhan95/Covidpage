@@ -1,0 +1,100 @@
+.nav {
+    overflow: hidden;
+    border-bottom: 3px solid #ffffff;
+    width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+}
+
+.nav a {
+    float: center;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.nav a:hover {
+    color: black;
+}
+
+.nav a:active {
+    color: black;
+}
+h1{
+    color:rgb(255, 255, 255);
+}
+
+body {
+    font: normal 16px/1.5 "Helvetica Neue", sans-serif;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    padding-bottom: 50px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* INTRO SECTION
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.intro {
+    background: #456990;
+    padding: 100px 0;
+  }
+
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+/* DATA SECTION
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.data {
+    background: #ffffff;
+    padding: 100px 0;
+  }
+
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .datatable {
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 20px;
+  }
+
+  table {
+    height: 80px;
+    width: 1200px;
+    border: 1px solid rgb(171, 171, 171);
+    border-radius: 10px;
+    border-collapse: separate;
+  }
+
+  th {
+      margin-left:100px;
+      margin-right: 100px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border-left: 1px rgb(171, 171, 171);
+  }
+
+  /* CHART SECTION
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
