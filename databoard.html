@@ -4,7 +4,7 @@
         <title>A COVID INFORMATION PAGE</title>
         <link rel="stylesheet" href="style2.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     </head>
     <body>
         <section class="intro">
@@ -28,33 +28,55 @@
                 </table>
             </div>
         </section>
-        <section class="charts">
-            <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+        <section class="linecharts">
+            <div class="container">
+                <div class="linechart">
+                    <h2> New Cases in U.S. in the Last Two Week of May </h2>
+                    <canvas id="myChart" style="width:100%;max-width:800px;margin-left:auto;margin-right:auto"></canvas>
+                    <p>Source: <a href="https://www.google.com/search?q=covid+cases+in+us&bih=690&biw=904&hl=en&ei=czegYoe2HoukptQP2b8Z&ved=0ahUKEwjHu_iwk534AhULkokEHdlfBgAQ4dUDCA4&uact=5&oq=covid+cases+in+us&gs_lcp=Cgdnd3Mtd2l6EAMyCwgAEIAEELEDEIMBMgsIABCABBCxAxCDATIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEOgcIABBHELADOgoIABBHELADEMkDOgYIABAeEBY6BQgAEIYDOgkIABAeEMkDEBY6AggmOgUIABCRAjoNCAAQsQMQgwEQChCRAjoLCAAQgAQQsQMQyQM6BQgAEJIDOggIABCABBCxAzoICAAQsQMQgwE6CAgAEIAEEMkDOg4IABCABBCxAxCDARDJAzoLCAAQsQMQgwEQkQI6BQgAELEDSgQIQRgASgQIRhgAUMoEWKEnYIEpaAFwAXgAgAF3iAGnCpIBBDE4LjKYAQCgAQHIAQjAAQE&sclient=gws-wiz">Google Stats</a></p>
+                    <script>
+                        var xValues = [15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
+                        var yValues = [19439,149818,134093,168915,121162,139427,37307,21984,133346,132365,187530,124584,138749,13762,9045,32152,182368];
 
-            <script>
-                var xValues = [50,60,70,80,90,100,110,120,130,140,150];
-                var yValues = [7,8,8,9,9,9,10,11,14,14,15];
+                        new Chart("myChart", {
+                            type: "line",
+                            data: {
+                                labels: xValues,
+                                datasets: [{
+                                    fill: false,
+                                    lineTension: 0,
+                                    backgroundColor: "rgba(0,0,255,1.0)",
+                                    borderColor: "rgba(0,0,255,0.1)",
+                                    data: yValues
+                                }]
+                            },
+                            options: {
+                                legend: {display: false},
+                                scales: {
+                                    yAxes: [{ticks: {min: 0, max:200000}}],
+                                }
+                            }
+                        });
+                    </script>
+                </div>
+            </div>
+        </section>
+        <section class="piecharts">
+                <div class="container">
+                    <div class="piechart">
+                        <h2> U.S Vaccination Rate by Race/Ethnicity <br> between Dec 14,2020 to Jan 14,2021</h2>
+                        <div id="myPlot" style="width:100%;max-width:900px;margin-left:auto;margin-right:auto"></div>
+                        <p>Source: <a href="https://www.statista.com/chart/24089/demographic-characteristics-of-americans-vaccinated/"> Statista</a></p>
+                        <script>
+                            var xArray = ["White", "Hispanic/Latino", "Asian", "Black", "Ameican Indian","Pacific Island","Multiple/Other"];
+                            var yArray = [60.4, 11.5, 6.0, 5.4, 2.0, 0.3, 14.4];
 
-                new Chart("myChart", {
-                    type: "line",
-                    data: {
-                        labels: xValues,
-                        datasets: [{
-                            fill: false,
-                            lineTension: 0,
-                            backgroundColor: "rgba(0,0,255,1.0)",
-                            borderColor: "rgba(0,0,255,0.1)",
-                            data: yValues
-                        }]
-                    },
-                    options: {
-                        legend: {display: false},
-                        scales: {
-                            yAxes: [{ticks: {min: 6, max:16}}],
-                        }
-                    }
-                });
-            </script>
+                            var data = [{labels:xArray, values:yArray, type:"pie"}];
+
+                            Plotly.newPlot("myPlot", data);
+                        </script>
+                    </div>
+                </div>
         </section>
     </body>
 </html>
