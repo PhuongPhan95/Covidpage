@@ -1,3 +1,5 @@
+/* NAV BAR + TITLE
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 .nav {
     overflow: hidden;
     border-bottom: 3px solid #ffffff;
@@ -98,7 +100,7 @@ th {
     margin-bottom: 10px;
 }
 
-  /* CHART SECTION
+/* CHART SECTION
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .linecharts {
     margin-left: auto;
